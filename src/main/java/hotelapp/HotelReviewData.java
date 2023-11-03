@@ -29,6 +29,9 @@ public class HotelReviewData {
      * @return a list of reviews for this hotel id
      */
    public List<Review> getReviews(String hotelId) {
+       if (!reviewsMap.containsKey(hotelId)) {
+           return new ArrayList<>();
+       }
         return Collections.unmodifiableList(reviewsMap.get(hotelId));
    }
 }
